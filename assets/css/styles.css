@@ -237,14 +237,14 @@ img {
   font-weight: var(--font-semi);
   border-radius: .5rem;
   transition: .3s;
-  border: 2px solid var(--first-color);
+  border: 1px solid rgba(146, 161, 176, 0.3);
   text-decoration: none;
 }
 
 .button--white {
   background-color: #fff;
   color: var(--second-color);
-  border: 2px solid var(--second-color);
+  border: 1px solid rgba(146, 161, 176, 0.3);
 }
 
 .button:hover {
