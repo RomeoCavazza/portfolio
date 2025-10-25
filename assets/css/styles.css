@@ -255,8 +255,6 @@ img {
 .button--white:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
-  background-color: var(--second-color);
-  color: #fff;
 }
 
 .about__container {
