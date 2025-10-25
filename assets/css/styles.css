@@ -237,19 +237,26 @@ img {
   font-weight: var(--font-semi);
   border-radius: .5rem;
   transition: .3s;
+  border: 2px solid var(--first-color);
+  text-decoration: none;
 }
 
 .button--white {
   background-color: #fff;
   color: var(--second-color);
+  border: 2px solid var(--second-color);
 }
 
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .button--white:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  background-color: var(--second-color);
+  color: #fff;
 }
 
 .about__container {
