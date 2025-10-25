@@ -239,7 +239,16 @@ img {
   transition: .3s;
 }
 
+.button--white {
+  background-color: #fff;
+  color: var(--second-color);
+}
+
 .button:hover {
+  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.button--white:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }
 
