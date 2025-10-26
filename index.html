@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio de Roméo Cavazza - AI Engineer spécialisé en LLMs, Agentic AI et architectures cloud. Master Epitech Paris.">
+        <meta name="keywords" content="AI Engineer, LLMs, Agentic AI, Python, MLOps, Epitech, portfolio, intelligence artificielle, cloud architectures, FastAPI, LangChain">
+        <meta name="author" content="Roméo Cavazza">
+        <meta name="robots" content="index, follow">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Roméo Cavazza - AI Engineer Portfolio">
+        <meta property="og:description" content="AI Engineer spécialisé en LLMs, Agentic AI et architectures cloud. Master Epitech Paris.">
+        <meta property="og:image" content="assets/img/profil-picture.jpg">
+        
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:title" content="Roméo Cavazza - AI Engineer Portfolio">
+        <meta property="twitter:description" content="AI Engineer spécialisé en LLMs, Agentic AI et architectures cloud.">
+        <meta property="twitter:image" content="assets/img/profil-picture.jpg">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/terminal.css">
+        <link rel="preconnect" href="https://unpkg.com">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+        <title>Roméo Cavazza | AI Engineer Portfolio</title>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="index.html" class="nav__logo">Romeo</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item dropdown">
+                            <a href="#work" class="nav__link">Work <i class='bx bx-chevron-down'></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="pages/epitech-training.html">Epitech Training</a></li>
+                                <li><a href="pages/workflow-automation.html">Workflow Automation</a></li>
+                                <li><a href="pages/social-platform.html">Social Platform</a></li>
+                                <li><a href="pages/system-setup.html">System Setup</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Romeo</span><br>AI Engineer</h1>
+                    <div class="home__button-group">
+                        <a href="CAVAZZA_Romeo_Resume.pdf" download class="button button--white home__button">My Resume</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=romeo.cavazza@gmail.com" target="_blank" rel="noopener" class="button home__button">Contact Me</a>
+                    </div>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/romeo-cavazza/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/RomeoCavazza" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="https://discord.gg/TKbNuuV4sX" class="home__social-icon" target="_blank" rel="noopener" title="Join my Discord server"><i class='bx bxl-discord' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <div class="home__img-wrapper">
+                        <img src="assets/img/profil-picture.jpg" alt="Photo de profil de Roméo Cavazza, AI Engineer" width="450" height="450">
+                    </div>
+                </div>
+            </section>
+
+            <section class="about section" id="about">
+                <h2 class="section-title">About</h2>
+                
+                <div class="about__container bd-grid">
+                    <div class="about__terminal-wrapper">
+                        <div class="container terminal-box terminal-hover">
+                            <div class="terminal_toolbar">
+                                <div class="butt">
+                                    <button class="btn btn-color"></button>
+                                    <button class="btn"></button>
+                                    <button class="btn"></button>
+                                </div>
+                                <p class="user">romeo@dev: ~</p>
+                            </div>
+                            <div class="terminal_body terminal-window">
+                                <div class="terminal_wrapper">
+                                    <span class="terminal_user">romeo@dev<span class="terminal_bling">:</span></span><span class="terminal_location">~</span><span class="terminal_bling">$ </span><span id="terminal-command" class="terminal_command"></span><span class="terminal_cursor"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="about__subtitle">I'm Romeo</h2>
+                        <p class="about__text">Artificial intelligence student, passionate about LLMs, Agentic AI, and cloud architectures. My aim is to design systems at the intersection of strategy, human insight, and sovereignty.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+                
+                <div class="skills__container bd-grid">                
+                    <div>
+                        <h2 class="skills__subtitle">Professional Skills</h2>
+                        <p class="skills__text">
+                            Currently at Epitech, focused on Python, Linux, and DevOps. Skilled in LLMs, Agentic AI, and MLOps.
+                        </p>
+
+                        <!-- Python -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxl-python skills__icon"></i>
+                                <span class="skills__name">Python</span>
+                            </div>
+                            <div class="skills__bar skills__html"></div>
+                            <div><span class="skills__percentage">85%</span></div>
+                        </div>
+                    
+                        <!-- Docker -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class="bx bxl-docker skills__icon"></i>
+                                <span class="skills__name">Docker</span>
+                            </div>
+                            <div class="skills__bar skills__css"></div>
+                            <div><span class="skills__percentage">80%</span></div>
+                        </div>
+
+                        <!-- n8n -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/n8n-logo.svg" alt="Logo n8n - Plateforme d'automatisation de workflow" class="skills__icon-img" width="32" height="32">
+                                <span class="skills__name">n8n</span>
+                            </div>
+                            <div class="skills__bar skills__js"></div>
+                            <div><span class="skills__percentage">75%</span></div>                    
+                        </div>
+                        
+                        <!-- NixOS -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/nixos-logo.svg" alt="Logo NixOS - Système d'exploitation Linux déclaratif" class="skills__icon-img" width="32" height="32">
+                                <span class="skills__name">NixOS</span>
+                            </div>
+                            <div class="skills__bar skills__ux"></div>
+                            <div><span class="skills__percentage">70%</span></div>
+                        </div>
+                    </div>                  
+                    <div class="skills__img-container">
+                        <img src="assets/img/love-linux.jpg" alt="Environnement Linux avec interface de terminal et lignes de code" class="skills__img" width="450" height="450" />
+                    </div>
+                </div>  
+            </section>              
+
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+              
+                <div class="work__container bd-grid">
+                    <div class="work__item">
+                        <div class="work__img">
+                            <img src="assets/img/piscine.png" alt="Epitech Training - Projets de programmation Python et Linux" loading="lazy">
+                        </div>
+                        <div class="work__item-content">
+                            <h3>Epitech Training</h3>
+                            <p>Python, Linux, DevOps. Building scalable solutions with clean code and best practices.</p>
+                            <div class="work__button-wrapper">
+                                <a href="pages/epitech-training.html" class="button work__item-button">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="work__item">
+                        <div class="work__img">
+                            <img src="assets/img/automation.png" alt="Workflow Automation - Interface d'automatisation avec n8n et Make" loading="lazy">
+                        </div>
+                        <div class="work__item-content">
+                            <h3>Workflow Automation</h3>
+                            <p>Data pipeline automation with n8n and Make. API connectors and AI integration.</p>
+                            <div class="work__button-wrapper">
+                                <a href="pages/workflow-automation.html" class="button work__item-button">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="work__item">
+                        <div class="work__img">
+                            <img src="assets/img/osint.jpg" alt="Social Platform - Visualisation de données OSINT et intelligence sociale" loading="lazy">
+                        </div>
+                        <div class="work__item-content">
+                            <h3>Social Platform</h3>
+                            <p>SaaS for social intelligence. FastAPI, PostgreSQL, MeiliSearch. Meta and TikTok APIs.</p>
+                            <div class="work__button-wrapper">
+                                <a href="pages/social-platform.html" class="button work__item-button">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="work__item">
+                        <div class="work__img">
+                            <img src="assets/img/hyprland.jpg" alt="System Setup - Configuration Linux Hyprland et NixOS" loading="lazy">
+                        </div>
+                        <div class="work__item-content">
+                            <h3>System Setup</h3>
+                            <p>Arch/NixOS configuration with Hyprland. Reproducible and optimized dotfiles.</p>
+                            <div class="work__button-wrapper">
+                                <a href="pages/system-setup.html" class="button work__item-button">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>              
+
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact__container bd-grid">
+                    <form id="contact-form" class="contact__form">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Message" rows="6" class="contact__input" required></textarea>
+                        <button type="submit" class="contact__button button">Send</button>
+                    </form>
+                </div>
+            </section>
+
+            <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__title">Romeo</p>
+            
+            <div class="footer__contact">
+                <a href="mailto:romeo.cavazza@gmail.com" class="footer__contact-link">
+                    <i class='bx bx-envelope'></i>romeo.cavazza@gmail.com
+                </a>
+                <a href="tel:+33699256758" class="footer__contact-link">
+                    <i class='bx bx-phone'></i>+33 6 99 25 67 58
+                </a>
+            </div>
+            
+            <p class="footer__copy">© 2025 Romeo Cavazza — Resume</p>
+        </footer>
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
