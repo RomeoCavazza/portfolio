@@ -12,6 +12,34 @@
         <link rel="stylesheet" href="../assets/css/styles.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <style>
+            .image-stack {
+                position: relative;
+                width: 700px;
+                height: 525px;
+                cursor: pointer;
+            }
+            .stack-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 700px;
+                height: 525px;
+                object-fit: contain;
+                border-radius: 0.5rem;
+                transition: opacity 0.3s ease, z-index 0.3s ease, transform 0.3s ease;
+            }
+            .stack-image.active {
+                opacity: 1;
+                z-index: 2;
+                transform: translate(0, 0);
+            }
+            .stack-image.hidden {
+                opacity: 0.3;
+                z-index: 1;
+                transform: translate(-20px, -20px);
+            }
+        </style>
 
         <title>Workflow Automation | Roméo Cavazza - Portfolio</title>
     </head>
@@ -51,19 +79,93 @@
                 <div class="bd-grid">
                     <h2 class="section-title">Workflow Automation</h2>
                     
-                    <div class="project-container">
-                        <img class="project-img" src="../assets/img/automation.png" alt="Interface d'automatisation de workflows avec n8n et Make" width="800" height="600">
+                    <div class="about__text project-text" style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--second-color); font-weight: 600;">No-Code Foundations to Data Intelligence</h3>
+                        <p style="line-height: 1.6; margin-bottom: 1.5rem;">Started with no-code automation (Make, then n8n), then specialized in web scraping, data aggregation, and AI-powered content analysis. This expertise directly inspired the creation of the <a href="social-platform.html" style="color: var(--first-color); text-decoration: none; font-weight: 600;">insider</a> full-stack platform.</p>
                         
-                        <div class="about__text project-text">
-                            <p>Data pipeline automation with n8n and Make. API connectors and AI integration.</p>
-                            <p>Simple automation workflows built with Make, n8n, and Airtable, designed to aggregate data (RSS, social media) and explore OSINT.</p>
+                        <div class="badges-container" style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+                            <img src="https://img.shields.io/badge/n8n-EA4C89?logo=n8n&logoColor=white" alt="n8n">
+                            <img src="https://img.shields.io/badge/Make-0085FF?logo=make&logoColor=white" alt="Make">
+                            <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker">
+                            <img src="https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white" alt="OpenAI">
+                            <img src="https://img.shields.io/badge/Google%20Gemini-4285F4?logo=google&logoColor=white" alt="Gemini">
+                            <img src="https://img.shields.io/badge/Airtable-18BFFF?logo=airtable&logoColor=white" alt="Airtable">
+                            <img src="https://img.shields.io/badge/Google%20Sheets-34A853?logo=googlesheets&logoColor=white" alt="Google Sheets">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <!-- TikTok n8n - Image à gauche -->
+                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
+                            <div class="image-stack" onclick="toggleImage(this)">
+                                <img src="../assets/img/n8n-tiktok.png" alt="TikTok n8n Workflow" class="stack-image active">
+                                <img src="../assets/img/database-table.png" alt="Database Table" class="stack-image hidden">
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" style="width: 24px; height: 24px;"> TikTok Intelligence Agency
+                                </h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">TikTok scraper with AI-powered transcript analysis and Airtable storage. Built with n8n × Airtable.</p>
+                                <div style="display: flex; gap: 1.5rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/tiktok/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bx-code-curly'></i> JSON
+                                    </a>
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/tiktok" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bxl-github'></i> Repo
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="project-buttons">
-                            <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" class="button project-btn">
-                                <i class='bx bxl-github'></i> View on GitHub
-                            </a>
+                        <!-- Make AI - Image à droite -->
+                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; flex-direction: row-reverse;">
+                            <div class="image-stack" onclick="toggleImage(this)">
+                                <img src="../assets/img/make-ai.png" alt="Make AI Workflow" class="stack-image active">
+                                <img src="../assets/img/database-sheet.png" alt="Database Sheet" class="stack-image hidden">
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="../assets/img/make.svg" alt="Make" style="width: 24px; height: 24px;"> Multi-Scraper AI Intelligence
+                                </h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">RSS and Instagram aggregation with Gemini AI analysis in Google Sheets. Powered by Make × Google Sheets.</p>
+                                <div style="display: flex; gap: 1.5rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/multi-scraper/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bx-code-curly'></i> JSON
+                                    </a>
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/multi-scraper" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bxl-github'></i> Repo
+                                    </a>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Gmail n8n - Image à gauche -->
+                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
+                            <div class="image-stack" onclick="toggleImage(this)">
+                                <img src="../assets/img/n8n-gmail.png" alt="Gmail n8n Workflow" class="stack-image active">
+                                <img src="../assets/img/front-end.png" alt="Frontend Dashboard" class="stack-image hidden">
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" style="width: 24px; height: 24px;"> Gmail AI Automation
+                                </h3>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">Daily email fetching with OpenAI analysis and interactive web dashboard. Tech stack: n8n + vanilla HTML/CSS/JS.</p>
+                                <div style="display: flex; gap: 1.5rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/gmail/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bx-code-curly'></i> JSON
+                                    </a>
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/gmail" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                        <i class='bx bxl-github'></i> Repo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-buttons" style="text-align: center; margin-top: 2rem;">
+                        <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" class="button project-btn">
+                            <i class='bx bxl-github'></i> View on GitHub
+                        </a>
                     </div>
                 </div>
             </section>
@@ -119,6 +221,15 @@
         
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="../assets/js/main.js"></script>
+        <script>
+            function toggleImage(container) {
+                const images = container.querySelectorAll('.stack-image');
+                images.forEach(img => {
+                    img.classList.toggle('active');
+                    img.classList.toggle('hidden');
+                });
+            }
+        </script>
     </body>
 </html>
 

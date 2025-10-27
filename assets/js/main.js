@@ -176,8 +176,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         sr.reveal('.section-title', { duration: 1000, reset: false, origin: 'top' });
+        sr.reveal('.project-text', { delay: 100, duration: 1000, reset: false, origin: 'top' });
         sr.reveal('.project-img', { delay: 200, duration: 1000, distance: '80px', reset: false, origin: 'top' });
-        sr.reveal('.project-text', { delay: 300, duration: 1000, reset: false, origin: 'top' });
+        sr.reveal('.badges-container', { delay: 300, duration: 1000, reset: false, origin: 'top', distance: '40px' });
+        sr.reveal('.seminar-card', { interval: 150, duration: 1000, delay: 100, origin: 'bottom', distance: '50px' });
         sr.reveal('.project-btn', { delay: 500, duration: 1000, origin: 'top', distance: '80px', reset: false });
         sr.reveal('.work__container--mini .work__item', { interval: 100, duration: 1000, delay: 200, origin: 'top', distance: '40px' });
         sr.reveal('.footer__title', { delay: 400, duration: 1000, reset: false, origin: 'top' });
