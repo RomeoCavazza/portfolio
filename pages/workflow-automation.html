@@ -8,36 +8,224 @@
         <meta name="author" content="Roméo Cavazza">
         <meta name="robots" content="index, follow">
         
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
         <link rel="canonical" href="https://romeo-cavazza.dev/pages/workflow-automation.html">
         <link rel="stylesheet" href="../assets/css/styles.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <style>
-            .image-stack {
+            /* Browser Mockup - From Uiverse.io by arthur_6104 */
+            .browser {
+                height: 450px;
+                background: lightgrey;
+                border-radius: 7px;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
                 position: relative;
-                width: 700px;
-                height: 525px;
-                cursor: pointer;
+                box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+                flex-shrink: 0;
+                transition: all 0.3s ease;
             }
-            .stack-image {
+            
+            /* Largeurs dynamiques pour les 6 navigateurs */
+            .browser.n8n-tiktok { width: 480px; height: 445px; }
+            .browser.airtable { width: 685px; height: 448px; }
+            .browser.make { width: 700px; height: 445px; }
+            .browser.sheets { width: 440px; }
+            .browser.n8n { width: 738px; height: 445px; }
+            .browser.localhost { width: 412px; }
+            
+            .browser:hover {
+                box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
+                transform: translateY(-5px);
+            }
+            
+            .tabs-head {
+                background-color: #353535;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+                padding-left: 20px;
+            }
+            
+            .tabs-head .tab-open {
+                width: 100px;
+                height: 34px;
+                border-radius: 7px 7px 0 0;
+                background-color: #515151;
+                display: flex;
+                gap: 5px;
+                align-items: start;
+                justify-content: space-between;
+                padding: 4px 8px;
+                position: relative;
+            }
+            
+            .tabs-head .tab-open .close-tab {
+                color: #fff;
+                font-size: 9px;
+                padding: 1px 4px;
+                border-radius: 50%;
+                cursor: default;
+            }
+            
+            .tabs-head .tab-open .close-tab:hover {
+                background-color: #5d5d5d;
+            }
+            
+            .tabs-head .tab-open .rounded-l {
+                position: absolute;
+                background-color: #515151;
+                width: 20px;
+                height: 24px;
+                top: 0;
+                right: 0;
+                transform: translate(100%);
+                overflow: hidden;
+            }
+            
+            .tabs-head .tab-open .rounded-l .mask-round {
+                width: 100%;
+                height: 100%;
+                background-color: #353535;
+                border-radius: 0 0 0 7px;
+            }
+            
+            .tabs-head .tab-open .rounded-r {
+                position: absolute;
+                background-color: #515151;
+                width: 20px;
+                height: 24px;
+                top: 0;
+                left: 0;
+                transform: translate(-100%);
+                overflow: hidden;
+            }
+            
+            .tabs-head .tab-open .rounded-r .mask-round {
+                width: 100%;
+                height: 100%;
+                background-color: #353535;
+                border-radius: 0 0 7px 0;
+            }
+            
+            .tabs-head .tab-open span {
+                color: #fff;
+                font-size: 10px;
+            }
+            
+            .tabs-head .window-opt {
+                display: flex;
+            }
+            
+            .tabs-head .window-opt button {
+                height: 30px;
+                width: 30px;
+                border: none;
+                background-color: transparent;
+                transition: 0.1s ease-out;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            
+            .tabs-head .window-opt button:hover {
+                background-color: #515151c8;
+            }
+            
+            .tabs-head .window-opt .window-close:hover {
+                background-color: rgb(255, 52, 52);
+            }
+            
+            .browser-content {
+                flex: 1;
+                background: #1a1a1a;
+                overflow: hidden;
+                position: relative;
+                height: 370px;
+                padding: 15px;
+            }
+            
+            .browser-image {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 700px;
-                height: 525px;
+                width: 100%;
+                height: 100%;
                 object-fit: contain;
-                border-radius: 0.5rem;
-                transition: opacity 0.3s ease, z-index 0.3s ease, transform 0.3s ease;
+                border-radius: 4px;
             }
-            .stack-image.active {
-                opacity: 1;
+            
+            /* Cascade des navigateurs complets */
+            .browser-front {
+                position: absolute;
+                top: 0;
+                left: 0;
                 z-index: 2;
-                transform: translate(0, 0);
+                transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
             }
-            .stack-image.hidden {
-                opacity: 0.3;
+            
+            .browser-back {
+                position: absolute;
+                top: 35px;
+                left: 35px;
                 z-index: 1;
-                transform: translate(-20px, -20px);
+                transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            }
+            
+            /* Les navigateurs sans .now-front sont derrière en cascade */
+            .browser-front:not(.now-front) {
+                opacity: 0.4;
+                filter: brightness(0.5) blur(1px);
+                z-index: 1;
+                pointer-events: none;
+            }
+            
+            .browser-front.now-front {
+                opacity: 1;
+                filter: brightness(1) blur(0);
+                z-index: 3;
+                pointer-events: auto;
+            }
+            
+            .browser-back:not(.now-front) {
+                opacity: 0.4;
+                filter: brightness(0.5) blur(1px);
+                z-index: 1;
+                pointer-events: none;
+            }
+            
+            .browser-back.now-front {
+                opacity: 1;
+                filter: brightness(1) blur(0);
+                z-index: 3;
+                pointer-events: auto;
+            }
+            
+            /* Effet de cascade au hover du conteneur */
+            div[style*="position: relative"]:hover .browser.now-front {
+                transform: translate(-5px, -5px);
+            }
+            
+            div[style*="position: relative"]:hover .browser:not(.now-front) {
+                opacity: 0.5;
+            }
+            
+            /* Ajustements de taille pour chaque image */
+            .n8n-tiktok, .database-table {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .make-ai, .database-sheet {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .n8n-gmail, .front-end {
+                width: 100%;
+                height: 100%;
             }
         </style>
 
@@ -96,10 +284,44 @@
 
                     <div style="margin-top: 3rem;">
                         <!-- TikTok n8n - Image à gauche -->
-                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
-                            <div class="image-stack" onclick="toggleImage(this)">
-                                <img src="../assets/img/n8n-tiktok.png" alt="TikTok n8n Workflow" class="stack-image active">
-                                <img src="../assets/img/database-table.png" alt="Database Table" class="stack-image hidden">
+                        <div style="display: flex; align-items: center; gap: 6rem; margin-bottom: 8rem;">
+                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                                <!-- Browser devant -->
+                                <div class="browser browser-front n8n-tiktok">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>n8n</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/n8n-tiktok.png" alt="TikTok n8n Workflow" class="browser-image n8n-tiktok">
+                                    </div>
+                                </div>
+                                <!-- Browser derrière en cascade -->
+                                <div class="browser browser-back airtable">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>Airtable</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/database-table.png" alt="Database Table" class="browser-image database-table">
+                                    </div>
+                                </div>
                             </div>
                             <div style="flex: 1;">
                                 <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -118,10 +340,44 @@
                         </div>
 
                         <!-- Make AI - Image à droite -->
-                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem; flex-direction: row-reverse;">
-                            <div class="image-stack" onclick="toggleImage(this)">
-                                <img src="../assets/img/make-ai.png" alt="Make AI Workflow" class="stack-image active">
-                                <img src="../assets/img/database-sheet.png" alt="Database Sheet" class="stack-image hidden">
+                        <div style="display: flex; align-items: center; gap: 6rem; margin-bottom: 8rem; flex-direction: row-reverse;">
+                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                                <!-- Browser devant -->
+                                <div class="browser browser-front sheets">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>Sheets</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/database-sheet.png" alt="Database Sheet" class="browser-image database-sheet">
+                                    </div>
+                                </div>
+                                <!-- Browser derrière en cascade -->
+                                <div class="browser browser-back make">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>Make</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/make-ai.png" alt="Make AI Workflow" class="browser-image make-ai">
+                                    </div>
+                                </div>
                             </div>
                             <div style="flex: 1;">
                                 <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -140,10 +396,44 @@
                         </div>
 
                         <!-- Gmail n8n - Image à gauche -->
-                        <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
-                            <div class="image-stack" onclick="toggleImage(this)">
-                                <img src="../assets/img/n8n-gmail.png" alt="Gmail n8n Workflow" class="stack-image active">
-                                <img src="../assets/img/front-end.png" alt="Frontend Dashboard" class="stack-image hidden">
+                        <div style="display: flex; align-items: center; gap: 10rem; margin-bottom: 8rem;">
+                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                                <!-- Browser devant -->
+                                <div class="browser browser-front localhost">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>http://localhost</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/front-end.png" alt="Frontend Dashboard" class="browser-image front-end">
+                                    </div>
+                                </div>
+                                <!-- Browser derrière en cascade -->
+                                <div class="browser browser-back n8n">
+                                    <div class="tabs-head">
+                                        <div class="tab-open">
+                                            <span>n8n</span>
+                                            <div class="rounded-l"><div class="mask-round"></div></div>
+                                            <div class="rounded-r"><div class="mask-round"></div></div>
+                                        </div>
+                                        <div class="window-opt">
+                                            <button class="window-close">×</button>
+                                            <button>─</button>
+                                            <button>□</button>
+                                        </div>
+                                    </div>
+                                    <div class="browser-content">
+                                        <img src="../assets/img/n8n-gmail.png" alt="Gmail n8n Workflow" class="browser-image n8n-gmail">
+                                    </div>
+                                </div>
                             </div>
                             <div style="flex: 1;">
                                 <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -161,9 +451,9 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-buttons" style="text-align: center; margin-top: 2rem;">
-                        <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" class="button project-btn">
+                    
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" class="button project-btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                             <i class='bx bxl-github'></i> View on GitHub
                         </a>
                     </div>
@@ -222,13 +512,40 @@
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="../assets/js/main.js"></script>
         <script>
-            function toggleImage(container) {
-                const images = container.querySelectorAll('.stack-image');
-                images.forEach(img => {
-                    img.classList.toggle('active');
-                    img.classList.toggle('hidden');
-                });
+            function toggleBrowser(event) {
+                event.stopPropagation();
+                const container = event.currentTarget;
+                const browserFront = container.querySelector('.browser-front');
+                const browserBack = container.querySelector('.browser-back');
+                
+                // Toggle pour inverser qui est devant
+                if (browserFront && browserBack) {
+                    const frontIsActive = browserFront.classList.contains('now-front');
+                    
+                    if (frontIsActive) {
+                        browserFront.classList.remove('now-front');
+                        browserBack.classList.add('now-front');
+                    } else {
+                        browserFront.classList.add('now-front');
+                        browserBack.classList.remove('now-front');
+                    }
+                }
             }
+            
+            // Initialiser tous les conteneurs comme cliquables
+            document.addEventListener('DOMContentLoaded', function() {
+                const containers = document.querySelectorAll('div[style*="position: relative"]');
+                containers.forEach(container => {
+                    if (container.querySelector('.browser')) {
+                        container.style.cursor = 'pointer';
+                        // Initialiser le premier navigateur (front) comme visible
+                        const browserFront = container.querySelector('.browser-front');
+                        if (browserFront) {
+                            browserFront.classList.add('now-front');
+                        }
+                    }
+                });
+            });
         </script>
     </body>
 </html>
