@@ -205,6 +205,11 @@ img {
 
 .nav__logo {
   color: var(--second-color);
+  transition: color 0.3s ease;
+}
+
+.nav__logo:hover {
+  color: var(--first-color);
 }
 
 .nav__toggle {
