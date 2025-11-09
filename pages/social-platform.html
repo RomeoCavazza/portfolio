@@ -234,7 +234,7 @@
                 transition: all 0.5s ease-out;
                 text-decoration: none;
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
             }
             
             .discord-button:hover {
@@ -298,6 +298,303 @@
             .discord-button:hover .discord-arrow {
                 opacity: 1;
                 transform: translateX(4px);
+            }
+            
+            /* Responsive fluide avec ratios dynamiques - pas de breakpoints fixes */
+            /* bd-grid responsive avec ratio dynamique */
+            .bd-grid {
+                max-width: min(1024px, 95vw) !important;
+                padding-left: clamp(0.75rem, 4vw, 1rem) !important;
+                padding-right: clamp(0.75rem, 4vw, 1rem) !important;
+            }
+            
+            /* Conteneur projet responsive avec ratio */
+            .project-container {
+                max-width: min(800px, 100%) !important;
+                width: 100% !important;
+                padding: 0 clamp(0.5rem, 2vw, 1rem) !important;
+            }
+            
+            /* Conteneurs flex avec gap et margin dynamiques */
+            div[style*="display: flex"][style*="gap: 3rem"],
+            div[style*="display: flex"][style*="gap: 6rem"] {
+                gap: clamp(1.5rem, 4vw, 6rem) !important;
+                margin: clamp(1.5rem, 5vw, 6rem) 0 !important;
+            }
+            
+            /* Passage en colonne quand l'écran devient trop étroit */
+            @media screen and (max-width: 968px) {
+                div[style*="display: flex"][style*="gap: 3rem"],
+                div[style*="display: flex"][style*="gap: 6rem"] {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    width: 100% !important;
+                }
+                
+                /* Texte au-dessus en vue serrée */
+                div[style*="flex: 1"],
+                .about__text.project-text {
+                    order: -1;
+                    width: 100% !important;
+                    text-align: left !important;
+                }
+                
+                /* Logo Insider responsive - centré en vue serrée */
+                div[style*="flex-shrink: 0"][style*="display: flex"] {
+                    width: 100% !important;
+                    justify-content: center !important;
+                    margin-top: clamp(0.5rem, 2vw, 1rem);
+                    order: 2;
+                }
+            }
+            
+            /* Logo Insider avec taille dynamique - centré par défaut */
+            div[style*="flex-shrink: 0"][style*="display: flex"] {
+                justify-content: center !important;
+            }
+            
+            div[style*="flex-shrink: 0"][style*="display: flex"] img {
+                max-width: 100%;
+                height: auto;
+                max-height: clamp(40px, 8vw, 80px) !important;
+            }
+            
+            /* Conteneurs avec marges dynamiques */
+            div[style*="margin: 6rem 0"],
+            div[style*="margin: 8rem 0"],
+            div[style*="margin: 4rem 0"],
+            div[style*="margin: 3rem 0"] {
+                width: 100% !important;
+                margin-top: clamp(1rem, 4vw, 8rem) !important;
+                margin-bottom: clamp(1rem, 4vw, 8rem) !important;
+            }
+            
+            /* Image stack responsive - ratio 1:1 dynamique avec rétrécissement progressif et centré */
+            div[style*="position: relative"][style*="width: 450px"],
+            div.image-stack[style*="width: 450px"],
+            div.image-stack {
+                width: min(100%, clamp(250px, 50vw, 450px)) !important;
+                max-width: 100% !important;
+                height: auto !important;
+                position: relative !important;
+                aspect-ratio: 1 / 1 !important;
+                min-height: 0 !important;
+                flex-shrink: 1 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* S'assurer que les images à l'intérieur s'adaptent avec bordures rondes - toutes les vues */
+            .image-stack .stack-image,
+            .stack-image {
+                border-radius: 0.75rem !important; /* Bords arrondis */
+            }
+            
+            .image-stack .stack-image {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                height: 100% !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* GitHub card avec ratio 400/300 = 4/3, rétrécissement progressif et centré */
+            .card-container {
+                width: min(100%, clamp(280px, 45vw, 400px)) !important;
+                height: auto !important;
+                aspect-ratio: 400 / 300 !important; /* Ratio 4:3 */
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            /* Conteneur parent de la GitHub card - FORCER le centrage */
+            div[style*="width: 400px"][style*="flex-shrink: 0"] {
+                width: min(100%, clamp(280px, 45vw, 400px)) !important;
+                max-width: 100% !important;
+            }
+            
+            /* GitHub card - FORCER le centrage du conteneur */
+            div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            /* Lien parent de la GitHub card - centrer */
+            div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) a[href*="github.com/RomeoCavazza/veyl.io"] {
+                display: block !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+            
+            /* GitHub card elle-même - centrer */
+            div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) .card-container {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* Logo GitHub - centré en vue large (par rapport aux textes) */
+            div[style*="display: flex"][style*="justify-content: center"]:has(a[href*="github.com/RomeoCavazza/veyl.io"]:not(:has(.card-container))) {
+                justify-content: center !important;
+            }
+            
+            /* Lien GitHub avec logo - centré en vue large */
+            div[style*="display: flex"] a[href*="github.com/RomeoCavazza/veyl.io"]:not(:has(.card-container)) {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* Petit logo Discord - centré sur la marge gauche (pas le gros bouton) */
+            div[style*="display: flex"][style*="justify-content: center"]:has(a[href*="discord.gg"]:not(.discord-button)) {
+                justify-content: flex-start !important;
+            }
+            
+            /* Lien Discord avec petit logo - à gauche */
+            div[style*="display: flex"] a[href*="discord.gg"]:not(.discord-button) {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+            }
+            
+            /* Discord button - FORCER le centrage du conteneur */
+            div[style*="flex-shrink: 0"][style*="width: 400px"]:has(.discord-button) {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            /* Lien parent du Discord button - centrer */
+            div[style*="flex-shrink: 0"][style*="width: 400px"]:has(.discord-button) a[href*="discord.gg"] {
+                display: block !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+            
+            /* Discord button avec largeur dynamique - centré */
+            .discord-button {
+                width: min(100%, clamp(220px, 38vw, 280px)) !important;
+                max-width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block !important;
+                /* Pas d'aspect-ratio - le bouton s'adapte à son contenu naturellement */
+            }
+            
+            div[style*="flex-shrink: 0"]:not(div[style*="display: flex"]) {
+                flex-shrink: 1 !important;
+            }
+            
+            /* Liens centrés -> alignés à gauche en vue serrée */
+            @media screen and (max-width: 968px) {
+                /* Logo GitHub - à gauche en vue serrée */
+                div[style*="display: flex"][style*="justify-content: center"]:has(a[href*="github.com/RomeoCavazza/veyl.io"]:not(:has(.card-container))) {
+                    justify-content: flex-start !important;
+                }
+                
+                div[style*="display: flex"] a[href*="github.com/RomeoCavazza/veyl.io"]:not(:has(.card-container)) {
+                    margin-left: 0 !important;
+                    margin-right: auto !important;
+                }
+                
+                /* Petit logo Discord - à gauche en vue serrée aussi */
+                div[style*="display: flex"][style*="justify-content: center"]:has(a[href*="discord.gg"]:not(.discord-button)) {
+                    justify-content: flex-start !important;
+                }
+                
+                div[style*="display: flex"] a[href*="discord.gg"]:not(.discord-button) {
+                    margin-left: 0 !important;
+                    margin-right: auto !important;
+                }
+                
+                /* GitHub card - FORCER le centrage en vue serrée */
+                div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) {
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                    width: 100% !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                
+                div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) a[href*="github.com/RomeoCavazza/veyl.io"] {
+                    display: block !important;
+                    width: 100% !important;
+                    margin: 0 auto !important;
+                    text-align: center !important;
+                }
+                
+                div[style*="width: 400px"][style*="flex-shrink: 0"]:has(.card-container) .card-container {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                
+                /* Discord button - FORCER le centrage en vue serrée */
+                div[style*="flex-shrink: 0"][style*="width: 400px"]:has(.discord-button) {
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                    width: 100% !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+                
+                div[style*="flex-shrink: 0"][style*="width: 400px"]:has(.discord-button) a[href*="discord.gg"] {
+                    display: block !important;
+                    width: 100% !important;
+                    margin: 0 auto !important;
+                    text-align: center !important;
+                }
+                
+                .discord-button {
+                    width: min(100%, clamp(220px, 38vw, 280px)) !important;
+                    max-width: 280px !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+            }
+            
+            /* Badges responsive */
+            div[style*="display: flex"][style*="flex-wrap: wrap"] {
+                width: 100%;
+            }
+            
+            div[style*="display: flex"][style*="flex-wrap: wrap"] img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            /* Transformations de cascade proportionnelles - toujours en % */
+            .stack-image.hidden {
+                transform: translate(-4.44%, -4.44%) !important;
+            }
+            
+            .stack-image.back {
+                transform: translate(-8.89%, -8.89%) !important;
+            }
+            
+            /* Typographie fluide avec clamp */
+            h4 {
+                font-size: clamp(1rem, 2.5vw + 0.5rem, 1.5rem) !important;
+            }
+            
+            p {
+                font-size: clamp(0.85rem, 1.5vw + 0.5rem, 0.95rem) !important;
+            }
+            
+            /* Browser responsive */
+            .browser {
+                max-width: min(900px, 100%);
+                aspect-ratio: 1280 / 720;
             }
         </style>
 
@@ -396,7 +693,7 @@
                                          left: 0;
                                          width: 100%;
                                          object-fit: contain;
-                                         border-radius: 0.5rem;
+                                         border-radius: 0.75rem;
                                          transition: opacity 0.3s ease, transform 0.3s ease;
                                          box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
                                      ">
@@ -409,7 +706,7 @@
                                          left: 0;
                                          width: 100%;
                                          object-fit: contain;
-                                         border-radius: 0.5rem;
+                                         border-radius: 0.75rem;
                                          transition: opacity 0.3s ease, transform 0.3s ease;
                                          box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
                                      ">
@@ -422,7 +719,7 @@
                                          left: 0;
                                          width: 100%;
                                          object-fit: contain;
-                                         border-radius: 0.5rem;
+                                         border-radius: 0.75rem;
                                          transition: opacity 0.3s ease, transform 0.3s ease;
                                          box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
                                      ">
@@ -473,7 +770,7 @@
                                         <div class="content">
                                             <div class="prs">
                                                 <div class="pr">
-                                                    <input type="checkbox" checked>
+                                                    <input type="checkbox">
                                                     <div class="checkbox"></div>
                                                     <svg class="pr-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                                                     <div class="pr-text">
@@ -482,7 +779,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="pr">
-                                                    <input type="checkbox" checked>
+                                                    <input type="checkbox">
                                                     <div class="checkbox"></div>
                                                     <svg class="pr-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                                                     <div class="pr-text">
@@ -649,6 +946,7 @@
             });
             
             // Style CSS pour les images en cascade avec 3 positions subtiles
+            // Transformations proportionnelles pour la responsivité
             const stackStyle = document.createElement('style');
             stackStyle.textContent = `
                 .stack-image.active {
@@ -659,12 +957,12 @@
                 .stack-image.hidden {
                     opacity: 0.6;
                     z-index: 2;
-                    transform: translate(-20px, -20px);
+                    transform: translate(-4.44%, -4.44%); /* Proportionnel : -20px sur 450px */
                 }
                 .stack-image.back {
                     opacity: 0.35;
                     z-index: 1;
-                    transform: translate(-40px, -40px);
+                    transform: translate(-8.89%, -8.89%); /* Proportionnel : -40px sur 450px */
                 }
             `;
             document.head.appendChild(stackStyle);

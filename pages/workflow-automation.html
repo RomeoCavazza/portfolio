@@ -33,9 +33,9 @@
             .browser.n8n-tiktok { width: 480px; height: 445px; }
             .browser.airtable { width: 685px; height: 448px; }
             .browser.make { width: 700px; height: 445px; }
-            .browser.sheets { width: 440px; }
+            .browser.sheets { width: 440px; height: 450px; }
             .browser.n8n { width: 738px; height: 445px; }
-            .browser.localhost { width: 412px; }
+            .browser.localhost { width: 412px; height: 450px; }
             
             .browser:hover {
                 box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.4);
@@ -142,20 +142,56 @@
             .browser-content {
                 flex: 1;
                 background: #1a1a1a;
-                overflow: hidden;
+                overflow: visible;
                 position: relative;
-                height: 370px;
-                padding: 15px;
+                padding: 0;
+                margin: 0;
             }
             
+            /* Hauteurs spécifiques pour chaque browser en desktop */
+            .browser.n8n-tiktok .browser-content { 
+                height: 405px;
+            }
+            .browser.airtable .browser-content { 
+                height: 408px;
+            }
+            .browser.make .browser-content { 
+                height: 405px;
+            }
+            .browser.sheets .browser-content { 
+                height: 410px;
+            }
+            .browser.n8n .browser-content { 
+                height: 405px;
+            }
+            .browser.localhost .browser-content { 
+                height: 410px;
+            }
+            
+            /* Contexte de positionnement sur mesure pour chaque image */
+            .browser.n8n-tiktok .browser-content,
+            .browser.airtable .browser-content,
+            .browser.make .browser-content,
+            .browser.sheets .browser-content,
+            .browser.n8n .browser-content,
+            .browser.localhost .browser-content {
+                position: relative;
+                width: 100%;
+                padding: 0;
+            }
+            
+            /* Image collée aux bords avec inset-0, s'adaptant dynamiquement */
             .browser-image {
                 position: absolute;
-                top: 0;
-                left: 0;
+                inset: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
-                border-radius: 4px;
+                object-position: center;
+                border-radius: 0;
+                margin: 0;
+                padding: 0;
+                display: block;
             }
             
             /* Cascade des navigateurs complets */
@@ -227,6 +263,218 @@
             .n8n-gmail, .front-end {
                 width: 100%;
                 height: 100%;
+            }
+            
+            /* Responsive - Reproduire la logique desktop avec aspect-ratio */
+            @media screen and (max-width: 968px) {
+                /* Cadre browser : respecter les proportions relatives comme en vue large */
+                .browser {
+                    height: auto !important;
+                }
+                
+                /* Respecter les proportions relatives entre browsers comme en desktop */
+                /* Utiliser le plus grand browser (n8n: 738px) comme référence à 100% */
+                /* Cela garantit que les proportions visuelles sont conservées */
+                .browser.n8n-tiktok {
+                    width: calc(100% * 480 / 738);
+                    aspect-ratio: 480 / 445;
+                }
+                
+                .browser.airtable {
+                    width: calc(100% * 685 / 738);
+                    aspect-ratio: 685 / 448;
+                }
+                
+                .browser.make {
+                    width: calc(100% * 700 / 738);
+                    aspect-ratio: 700 / 445;
+                }
+                
+                .browser.sheets {
+                    width: calc(100% * 440 / 738);
+                    aspect-ratio: 440 / 450;
+                }
+                
+                .browser.n8n {
+                    width: 100%;
+                    aspect-ratio: 738 / 445;
+                }
+                
+                .browser.localhost {
+                    width: calc(100% * 412 / 738);
+                    aspect-ratio: 412 / 450;
+                }
+                
+                /* Contexte de positionnement sur mesure - ratios dynamiques */
+                .browser-content {
+                    flex: 1;
+                    min-height: 0;
+                    position: relative;
+                    padding: 0;
+                    margin: 0;
+                    background: #1a1a1a;
+                    width: 100%;
+                    height: auto !important;
+                    overflow: hidden;
+                }
+                
+                /* Calcul précis du ratio pour chaque browser-content - vraiment dynamique */
+                /* Ratio = largeur_browser / hauteur_content */
+                .browser.n8n-tiktok .browser-content {
+                    aspect-ratio: 480 / 405;
+                    height: auto !important;
+                }
+                
+                .browser.airtable .browser-content {
+                    aspect-ratio: 685 / 408;
+                    height: auto !important;
+                }
+                
+                .browser.make .browser-content {
+                    aspect-ratio: 700 / 405;
+                    height: auto !important;
+                }
+                
+                .browser.sheets .browser-content {
+                    aspect-ratio: 440 / 410;
+                    height: auto !important;
+                }
+                
+                .browser.n8n .browser-content {
+                    aspect-ratio: 738 / 405;
+                    height: auto !important;
+                }
+                
+                .browser.localhost .browser-content {
+                    aspect-ratio: 412 / 410;
+                    height: auto !important;
+                }
+                
+                /* Image qui remplit dynamiquement son conteneur */
+                .browser-image {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 0;
+                    margin: 0;
+                    padding: 0;
+                    display: block;
+                }
+                
+                /* Cascade : garder la disposition relative des paires comme en vue large */
+                .browser-front {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: auto !important;
+                }
+                
+                .browser-back {
+                    position: absolute;
+                    top: 35px;
+                    left: 35px;
+                    height: auto !important;
+                }
+                
+                /* S'assurer que chaque browser garde son ratio spécifique */
+                .browser-front.n8n-tiktok,
+                .browser-back.n8n-tiktok {
+                    aspect-ratio: 480 / 445;
+                }
+                
+                .browser-front.airtable,
+                .browser-back.airtable {
+                    aspect-ratio: 685 / 448;
+                }
+                
+                .browser-front.make,
+                .browser-back.make {
+                    aspect-ratio: 700 / 445;
+                }
+                
+                .browser-front.sheets,
+                .browser-back.sheets {
+                    aspect-ratio: 440 / 450;
+                }
+                
+                .browser-front.n8n,
+                .browser-back.n8n {
+                    aspect-ratio: 738 / 445;
+                }
+                
+                .browser-front.localhost,
+                .browser-back.localhost {
+                    aspect-ratio: 412 / 450;
+                }
+                
+                /* Conteneur parent avec ratio exact, aligné à gauche, taille adaptée */
+                div[style*="width: 650px"] {
+                    width: 100% !important;
+                    max-width: min(650px, 90vw);
+                    aspect-ratio: 650 / 450;
+                    height: auto !important;
+                    margin-bottom: 2rem;
+                    margin-left: 0 !important;
+                    margin-right: auto !important;
+                }
+                
+                /* Mettre texte au-dessus de l'image en vue serrée */
+                div[style*="display: flex"][style*="align-items: center"][style*="gap: 6rem"],
+                div[style*="display: flex"][style*="align-items: center"][style*="gap: 10rem"] {
+                    flex-direction: column !important;
+                    gap: 2rem !important;
+                    margin-bottom: 4rem !important;
+                    align-items: flex-start !important;
+                }
+                
+                div[style*="flex-direction: row-reverse"] {
+                    flex-direction: column !important;
+                }
+                
+                div[style*="flex: 1"] {
+                    order: -1;
+                    width: 100%;
+                    text-align: left;
+                }
+                
+                /* Aligner les conteneurs d'images à gauche et les rendre responsive */
+                div[style*="position: relative"][style*="width: 650px"] {
+                    margin-left: 0 !important;
+                    margin-right: auto !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+            }
+            
+            @media screen and (max-width: 576px) {
+                /* Réduire encore plus la taille sur très petits écrans */
+                .browser.n8n-tiktok,
+                .browser.airtable,
+                .browser.make,
+                .browser.sheets,
+                .browser.n8n,
+                .browser.localhost {
+                    max-width: min(100%, 85vw);
+                }
+                
+                div[style*="width: 650px"] {
+                    max-width: min(100%, 85vw) !important;
+                }
+                
+                .browser-back {
+                    top: 10px;
+                    left: 10px;
+                }
+                
+                div[style*="gap: 6rem"],
+                div[style*="gap: 10rem"] {
+                    gap: 1.5rem !important;
+                    margin-bottom: 3rem !important;
+                }
             }
         </style>
 

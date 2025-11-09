@@ -1,12 +1,16 @@
 .container {
-  width: 450px;
-  height: 450px;
+  width: 100%;
+  max-width: clamp(280px, 85vw, 720px);
+  height: clamp(157.5px, 47.8vw, 405px);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15) !important;
   opacity: 1 !important;
   visibility: visible !important;
   transition: transform 0.3s ease !important;
+  display: flex;
+  flex-direction: column;
+  text-align: left !important;
 }
 
 @keyframes slideInFromTop {
@@ -29,7 +33,11 @@
 }
 
 .container:hover,
-.terminal-hover:hover {
+.container:active,
+.container:focus,
+.terminal-hover:hover,
+.terminal-hover:active,
+.terminal-hover:focus {
   transform: translateY(-5px) !important;
   box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25) !important;
 }
@@ -105,20 +113,34 @@
 
 .terminal_body {
   background: #0a0a0a;
-  height: calc(100% - 30px);
-  padding: 20px;
+  padding: 0.5rem 0.75rem 0.75rem 0.5rem;
   margin-top: -1px;
-  font-size: 15px;
+  font-size: clamp(12px, 2vw, 15px);
   line-height: 1.6;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  text-align: left !important;
+  display: block !important;
 }
 
 .terminal_wrapper {
-  display: inline-block;
+  display: block;
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal !important;
+  margin: 0.25rem 0 0.25rem 0.25rem;
+  padding: 0;
+  text-align: left !important;
 }
 
 .terminal_prompt {
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .terminal_command {

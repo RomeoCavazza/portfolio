@@ -10,13 +10,45 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-const navLink = document.querySelectorAll('.nav__link')
+const navLinks = document.querySelectorAll('.nav__link')
+const dropdownLinks = document.querySelectorAll('.dropdown-menu a')
 
-function linkAction(){
+function closeNav(){
     const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show')
+    if (navMenu) {
+        navMenu.classList.remove('show')
+    }
+    document.querySelectorAll('.nav__item.dropdown.open').forEach(item => item.classList.remove('open'))
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+
+navLinks.forEach(link => {
+    if (link.parentElement?.classList?.contains('dropdown')) {
+        return
+    }
+    link.addEventListener('click', closeNav)
+})
+
+dropdownLinks.forEach(link => link.addEventListener('click', closeNav))
+
+const dropdownToggles = document.querySelectorAll('.nav__item.dropdown > a')
+
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', event => {
+        event.preventDefault()
+        const parent = toggle.parentElement
+        const isOpen = parent.classList.contains('open')
+        document.querySelectorAll('.nav__item.dropdown.open').forEach(item => {
+            if (item !== parent) {
+                item.classList.remove('open')
+            }
+        })
+        parent.classList.toggle('open', !isOpen)
+    })
+})
+
+window.addEventListener('resize', () => {
+    // Le dropdown reste ouvert après redimensionnement
+})
 
 const sections = document.querySelectorAll('section[id]')
 
