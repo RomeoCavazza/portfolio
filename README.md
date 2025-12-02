@@ -4,11 +4,11 @@ With over 4 years of experience in digital strategy and automation, I now focus 
 
 Currently, I'm pursuing a [Master of Science](https://www.epitech.eu/formation-alternance/pre-msc-post-bac2/) at [Epitech Paris](https://www.epitech.eu/ecole-informatique-paris/), while developing my own products and research projects.  
 
-I'm building a **SaaS platform for TikTok & Instagram OSINT** — designed to scrape, index, and analyze social media data using **FastAPI**, **PostgreSQL**, and **MeiliSearch**.  
+I'm building a **SaaS platform for TikTok & Instagram OSINT** — designed to scrape, index, and analyze social media data using **FastAPI**, **PostgreSQL**, and **Supabase**.  
 You'll also find here some of my other projects: **Revolvr Bot**, **TCO-OS (Linux/NixOS)**, **Piscine Epitech projects**, and experimental **low-code automation pipelines**.  
 
 ## 🚀 Currently focusing on
-🧠 **AI & Backend Engineering** — FastAPI, LangChain, MeiliSearch, data pipelines  
+🧠 **AI & Backend Engineering** — FastAPI, LangChain, Supabase, data pipelines  
 ⚙️ **DevOps & OS** — Docker, NixOS, CI/CD, reproducible environments  
 📡 **OSINT & SaaS Automation** — scalable data ingestion, APIs, and analytics  
 🔬 **Formal R&D** — logic, computation, and geometry through Coq/Agda  
