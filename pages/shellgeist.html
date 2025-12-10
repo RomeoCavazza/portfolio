@@ -53,70 +53,70 @@
             <section class="about section project-section" id="project">
                 <div class="bd-grid">
                     <div class="project-container">
-                        <!-- Logo centré -->
+                        <!-- 1. Logo -->
                         <div class="project-logo-center" style="margin-bottom: 3rem;">
                             <img src="../assets/img/shellgeist-logo.png" alt="ShellGeist Logo" class="project-logo-img">
                         </div>
 
-                        <!-- Section principale avec image et texte -->
-                        <div class="project-flex-row">
-                            <div class="project-flex-1">
-                                <div class="about__text project-text">
-                                    <h3>The Ghost in Your Shell</h3>
-                                    <p class="project-p-description">ShellGeist is a transparent, cyberpunk Terminal User Interface (TUI) agent powered by LLMs. It haunts your terminal to help you code, navigate, and automate tasks without ever leaving your keyboard.</p>
-                                    
-                                    <div class="badges-container project-badges">
-                                        <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-                                        <img src="https://img.shields.io/badge/Built%20With-Textual-FD6E98?style=for-the-badge" alt="Textual">
-                                        <img src="https://img.shields.io/badge/NixOS-Ready-5277C3?style=for-the-badge&logo=nixos&logoColor=white" alt="NixOS">
-                                        <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white" alt="AI">
-                                        <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- 2. Screenshot -->
+                        <div style="text-align: center; margin-bottom: 3rem;">
+                            <img class="project-img" src="../assets/img/shellgeist-screenshot.png" alt="ShellGeist TUI - Cyberpunk terminal interface with AI agent" style="width: 100%; max-width: 800px; height: auto; border-radius: 0.75rem; box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);">
+                        </div>
+
+                        <!-- 3. Description -->
+                        <div class="about__text project-text" style="text-align: center; margin-bottom: 2rem;">
+                            <h3>The Ghost in Your Shell</h3>
+                            <p class="project-p-description">ShellGeist is a transparent, cyberpunk Terminal User Interface (TUI) agent powered by LLMs. It haunts your terminal to help you code, navigate, and automate tasks without ever leaving your keyboard.</p>
+                        </div>
+
+                        <!-- 4. Tags (Badges) -->
+                        <div class="badges-container project-badges" style="justify-content: center; margin-bottom: 4rem;">
+                            <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                            <img src="https://img.shields.io/badge/Built%20With-Textual-FD6E98?style=for-the-badge" alt="Textual">
+                            <img src="https://img.shields.io/badge/NixOS-Ready-5277C3?style=for-the-badge&logo=nixos&logoColor=white" alt="NixOS">
+                            <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white" alt="AI">
+                            <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+                        </div>
+
+                        <!-- 5. Features en grille 2x2 -->
+                        <div style="margin-bottom: 4rem;">
+                            <h4 class="project-h4-features" style="text-align: center; margin-bottom: 2rem;">✨ Features</h4>
                             
-                            <div class="project-flex-shrink-0" style="width: 500px;">
-                                <img class="project-img" src="../assets/img/shellgeist-screenshot.png" alt="ShellGeist TUI - Cyberpunk terminal interface with AI agent" style="width: 100%; height: auto; border-radius: 0.75rem; box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
+                                <div style="padding: 1.5rem; background: rgba(146, 161, 176, 0.05); border-radius: 0.75rem; border: 1px solid rgba(146, 161, 176, 0.2);">
+                                    <h5 class="project-h5">👾 Cyberpunk Dashboard</h5>
+                                    <p class="project-p-feature">A grid-based layout inspired by modern IDEs and sci-fi interfaces. 100% transparent — seamlessly blends with your terminal wallpaper or blur.</p>
+                                </div>
+                                
+                                <div style="padding: 1.5rem; background: rgba(146, 161, 176, 0.05); border-radius: 0.75rem; border: 1px solid rgba(146, 161, 176, 0.2);">
+                                    <h5 class="project-h5">🧠 Dual Mode Brain</h5>
+                                    <p class="project-p-feature">
+                                        <strong>FAST Mode</strong>: Uses lightweight models (e.g., Mistral) for instant answers.<br>
+                                        <strong>SMART Mode</strong>: Switches to heavy-hitters (e.g., Llama3, GPT-4) for complex reasoning and planning.
+                                    </p>
+                                </div>
+                                
+                                <div style="padding: 1.5rem; background: rgba(146, 161, 176, 0.05); border-radius: 0.75rem; border: 1px solid rgba(146, 161, 176, 0.2);">
+                                    <h5 class="project-h5">🤖 Autonomous Agent</h5>
+                                    <p class="project-p-feature">
+                                        <code>/auto</code> Planner: Breaks down high-level goals into executable steps.<br>
+                                        <code>/edit</code> Coder: Smart file editing with diff previews and safety checks.<br>
+                                        <code>/sh</code> Executor: Generates and runs shell commands safely.
+                                    </p>
+                                </div>
+                                
+                                <div style="padding: 1.5rem; background: rgba(146, 161, 176, 0.05); border-radius: 0.75rem; border: 1px solid rgba(146, 161, 176, 0.2);">
+                                    <h5 class="project-h5">📊 Real-time Monitoring</h5>
+                                    <p class="project-p-feature">Live CPU/RAM usage tracking. Reactive agent status indicators (IDLE, THINKING, PLANNING, CODING).</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Features Section -->
-                        <div class="project-text-margin-top">
-                            <h4 class="project-h4-features">✨ Features</h4>
+                        <!-- 6. Tableau des Commands -->
+                        <div style="margin-bottom: 4rem;">
+                            <h4 class="project-h4-features" style="text-align: center; margin-bottom: 2rem;">🎮 Commands</h4>
                             
-                            <div class="project-features-container">
-                                <div class="project-flex-row-medium">
-                                    <div class="project-flex-1">
-                                        <h5 class="project-h5">👾 Cyberpunk Dashboard</h5>
-                                        <p class="project-p-feature">A grid-based layout inspired by modern IDEs and sci-fi interfaces. 100% transparent — seamlessly blends with your terminal wallpaper or blur.</p>
-                                        
-                                        <h5 class="project-h5">🧠 Dual Mode Brain</h5>
-                                        <p class="project-p-feature">
-                                            <strong>FAST Mode</strong>: Uses lightweight models (e.g., Mistral) for instant answers.<br>
-                                            <strong>SMART Mode</strong>: Switches to heavy-hitters (e.g., Llama3, GPT-4) for complex reasoning and planning.
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="project-flex-1">
-                                        <h5 class="project-h5">🤖 Autonomous Agent</h5>
-                                        <p class="project-p-feature">
-                                            <code>/auto</code> Planner: Breaks down high-level goals into executable steps.<br>
-                                            <code>/edit</code> Coder: Smart file editing with diff previews and safety checks.<br>
-                                            <code>/sh</code> Executor: Generates and runs shell commands safely.
-                                        </p>
-                                        
-                                        <h5 class="project-h5">📊 Real-time Monitoring</h5>
-                                        <p class="project-p-feature">Live CPU/RAM usage tracking. Reactive agent status indicators (IDLE, THINKING, PLANNING, CODING).</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Commands Section -->
-                        <div class="project-text-margin-top">
-                            <h4 class="project-h4-features">🎮 Commands</h4>
-                            
-                            <div class="project-commands-container">
+                            <div class="project-commands-container" style="max-width: 800px; margin: 0 auto;">
                                 <table class="project-table">
                                     <tr>
                                         <td class="project-table-command">Chat</td>
