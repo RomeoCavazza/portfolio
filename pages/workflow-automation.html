@@ -205,13 +205,13 @@
             
             .browser-back {
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: 35px;
+                left: 35px;
                 z-index: 1;
                 transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
             }
             
-            /* Par défaut : browser-front visible, browser-back caché */
+            /* Par défaut : browser-front visible, browser-back visible mais grisé derrière */
             .browser-front:not(.now-back) {
                 opacity: 1;
                 filter: brightness(1) blur(0);
@@ -220,14 +220,14 @@
             }
             
             .browser-front.now-back {
-                opacity: 0;
+                opacity: 0.3;
                 filter: brightness(0.5) blur(1px);
                 z-index: 1;
                 pointer-events: none;
             }
             
             .browser-back:not(.now-back) {
-                opacity: 0;
+                opacity: 0.3;
                 filter: brightness(0.5) blur(1px);
                 z-index: 1;
                 pointer-events: none;
