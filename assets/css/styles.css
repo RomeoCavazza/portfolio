@@ -1720,10 +1720,76 @@ img {
     font-size: 0.9rem;
 }
 
+/* ShellGeist page specific styles */
+.shellgeist-logo-container {
+    margin-bottom: 3rem;
+}
+
+.shellgeist-screenshot-container {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.shellgeist-screenshot {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.shellgeist-description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.shellgeist-badges {
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.shellgeist-features-section {
+    margin-bottom: 4rem;
+}
+
+.shellgeist-features-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.shellgeist-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.shellgeist-feature-card {
+    padding: 1.5rem;
+    background: rgba(146, 161, 176, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(146, 161, 176, 0.2);
+}
+
+.shellgeist-commands-section {
+    margin-bottom: 4rem;
+}
+
+.shellgeist-commands-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.shellgeist-commands-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* Responsive pour la grille 2x2 des features */
 @media screen and (max-width: 768px) {
-    div[style*="grid-template-columns: repeat(2, 1fr)"] {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
+    .shellgeist-features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
