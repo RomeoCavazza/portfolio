@@ -12,6 +12,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
         <link rel="canonical" href="https://romeo-cavazza.dev/pages/workflow-automation.html">
         <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/project-pages.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
         <style>
@@ -499,6 +500,7 @@
                                 <li><a href="workflow-automation.html">Workflow Automation</a></li>
                                 <li><a href="social-platform.html">Social Platform</a></li>
                                 <li><a href="system-setup.html">System Setup</a></li>
+                                <li><a href="shellgeist.html">ShellGeist</a></li>
                             </ul>
                         </li>
                         <li class="nav__item"><a href="../index.html#contact" class="nav__link">Contact</a></li>
@@ -516,11 +518,11 @@
                 <div class="bd-grid">
                     <h2 class="section-title">Workflow Automation</h2>
                     
-                    <div class="about__text project-text" style="margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--second-color); font-weight: 600;">No-Code Foundations to Data Intelligence</h3>
-                        <p style="line-height: 1.6; margin-bottom: 1.5rem;">Started with no-code automation (Make, then n8n), then specialized in web scraping, data aggregation, and AI-powered content analysis. This expertise directly inspired the creation of the <a href="social-platform.html" style="color: var(--first-color); text-decoration: none; font-weight: 600;">veyl.io</a> full-stack platform.</p>
+                    <div class="about__text project-text project-text-margin">
+                        <h3 class="project-h3-subtitle">No-Code Foundations to Data Intelligence</h3>
+                        <p class="project-p-description">Started with no-code automation (Make, then n8n), then specialized in web scraping, data aggregation, and AI-powered content analysis. This expertise directly inspired the creation of the <a href="social-platform.html" class="project-link-inline">veyl.io</a> full-stack platform.</p>
                         
-                        <div class="badges-container" style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+                        <div class="badges-container project-badges-center">
                             <img src="https://img.shields.io/badge/n8n-EA4C89?logo=n8n&logoColor=white" alt="n8n">
                             <img src="https://img.shields.io/badge/Make-0085FF?logo=make&logoColor=white" alt="Make">
                             <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker">
@@ -531,10 +533,10 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 3rem;">
+                    <div class="project-text-margin-top">
                         <!-- TikTok n8n - Image à gauche -->
-                        <div style="display: flex; align-items: center; gap: 6rem; margin-bottom: 8rem;">
-                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                        <div class="project-browser-container-6rem">
+                            <div class="project-browser-container" onclick="toggleBrowser(event)">
                                 <!-- Browser devant -->
                                 <div class="browser browser-front n8n-tiktok">
                                     <div class="tabs-head">
@@ -572,16 +574,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="flex: 1;">
-                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" style="width: 24px; height: 24px;"> TikTok Intelligence Agency
+                            <div class="project-text-container">
+                                <h3 class="project-h3">
+                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" class="project-icon-medium"> TikTok Intelligence Agency
                                 </h3>
-                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">TikTok scraper with AI-powered transcript analysis and Airtable storage. Built with n8n × Airtable.</p>
-                                <div style="display: flex; gap: 1.5rem;">
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/tiktok/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                <p class="project-p">TikTok scraper with AI-powered transcript analysis and Airtable storage. Built with n8n × Airtable.</p>
+                                <div class="project-flex-gap">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/tiktok/json/workflow.json" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bx-code-curly'></i> JSON
                                     </a>
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/tiktok" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/tiktok" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bxl-github'></i> Repo
                                     </a>
                                 </div>
@@ -589,8 +591,8 @@
                         </div>
 
                         <!-- Make AI - Image à droite -->
-                        <div style="display: flex; align-items: center; gap: 6rem; margin-bottom: 8rem; flex-direction: row-reverse;">
-                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                        <div class="project-browser-container-6rem-reverse">
+                            <div class="project-browser-container" onclick="toggleBrowser(event)">
                                 <!-- Browser devant -->
                                 <div class="browser browser-front sheets">
                                     <div class="tabs-head">
@@ -628,16 +630,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="flex: 1;">
-                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <img src="../assets/img/make.svg" alt="Make" style="width: 24px; height: 24px;"> Multi-Scraper AI Intelligence
+                            <div class="project-text-container">
+                                <h3 class="project-h3">
+                                    <img src="../assets/img/make.svg" alt="Make" class="project-icon-medium"> Multi-Scraper AI Intelligence
                                 </h3>
-                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">RSS and Instagram aggregation with Gemini AI analysis in Google Sheets. Powered by Make × Google Sheets.</p>
-                                <div style="display: flex; gap: 1.5rem;">
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/multi-scraper/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                <p class="project-p">RSS and Instagram aggregation with Gemini AI analysis in Google Sheets. Powered by Make × Google Sheets.</p>
+                                <div class="project-flex-gap">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/multi-scraper/json/workflow.json" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bx-code-curly'></i> JSON
                                     </a>
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/multi-scraper" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/multi-scraper" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bxl-github'></i> Repo
                                     </a>
                                 </div>
@@ -645,8 +647,8 @@
                         </div>
 
                         <!-- Gmail n8n - Image à gauche -->
-                        <div style="display: flex; align-items: center; gap: 10rem; margin-bottom: 8rem;">
-                            <div style="position: relative; width: 650px; height: 450px;" onclick="toggleBrowser(event)">
+                        <div class="project-browser-container-xlarge">
+                            <div class="project-browser-container" onclick="toggleBrowser(event)">
                                 <!-- Browser devant -->
                                 <div class="browser browser-front localhost">
                                     <div class="tabs-head">
@@ -684,16 +686,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="flex: 1;">
-                                <h3 style="color: #000; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" style="width: 24px; height: 24px;"> Gmail AI Automation
+                            <div class="project-text-container">
+                                <h3 class="project-h3">
+                                    <img src="../assets/img/n8n-logo.svg" alt="n8n" class="project-icon-medium"> Gmail AI Automation
                                 </h3>
-                                <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; color: var(--second-color);">Daily email fetching with OpenAI analysis and interactive web dashboard. Tech stack: n8n + vanilla HTML/CSS/JS.</p>
-                                <div style="display: flex; gap: 1.5rem;">
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/gmail/json/workflow.json" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                <p class="project-p">Daily email fetching with OpenAI analysis and interactive web dashboard. Tech stack: n8n + vanilla HTML/CSS/JS.</p>
+                                <div class="project-flex-gap">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/blob/main/gmail/json/workflow.json" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bx-code-curly'></i> JSON
                                     </a>
-                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/gmail" target="_blank" style="color: var(--first-color); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.25rem;">
+                                    <a href="https://github.com/RomeoCavazza/no-low-code/tree/main/gmail" target="_blank" rel="noopener" class="project-link">
                                         <i class='bx bxl-github'></i> Repo
                                     </a>
                                 </div>
@@ -701,8 +703,8 @@
                         </div>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 3rem;">
-                        <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" class="button project-btn" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <div class="project-text-center">
+                        <a href="https://github.com/RomeoCavazza/no-low-code" target="_blank" rel="noopener" class="button project-btn project-button-inline">
                             <i class='bx bxl-github'></i> View on GitHub
                         </a>
                     </div>

@@ -12,6 +12,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
         <link rel="canonical" href="https://romeo-cavazza.dev/pages/system-setup.html">
         <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/project-pages.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -36,6 +37,7 @@
                                 <li><a href="workflow-automation.html">Workflow Automation</a></li>
                                 <li><a href="social-platform.html">Social Platform</a></li>
                                 <li><a href="system-setup.html">System Setup</a></li>
+                                <li><a href="shellgeist.html">ShellGeist</a></li>
                             </ul>
                         </li>
                         <li class="nav__item"><a href="../index.html#contact" class="nav__link">Contact</a></li>
@@ -59,10 +61,10 @@
                         </a>
                         
                         <div class="about__text project-text">
-                            <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--second-color); font-weight: 600;">Linux enthusiast & desktop customization</h3>
-                            <p style="line-height: 1.6; margin-bottom: 1.5rem;">Explored three different Linux distributions, each offering unique strengths for development workflows. Currently maining GNOME for daily productivity. Passionate about <a href="https://hyprland.org" target="_blank" style="color: var(--first-color); text-decoration: none; font-weight: 600;">Hyprland</a> ricing — a dynamic tiling window manager for Wayland. This repository contains my complete configuration: Hyprland setup, Tabby terminal, and Waybar status bar.</p>
+                            <h3 class="project-h3-subtitle">Linux enthusiast & desktop customization</h3>
+                            <p class="project-p-description">Explored three different Linux distributions, each offering unique strengths for development workflows. Currently maining GNOME for daily productivity. Passionate about <a href="https://hyprland.org" target="_blank" rel="noopener" class="project-link-inline">Hyprland</a> ricing — a dynamic tiling window manager for Wayland. This repository contains my complete configuration: Hyprland setup, Tabby terminal, and Waybar status bar.</p>
                             
-                            <div class="badges-container" style="margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <div class="badges-container project-badges">
                                 <img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" alt="Linux">
                                 <img src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=white" alt="Arch Linux">
                                 <img src="https://img.shields.io/badge/NixOS-5277C3?logo=nixos&logoColor=white" alt="NixOS">
@@ -73,47 +75,47 @@
                                 <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" alt="Git">
                             </div>
 
-                            <div class="distros-grid" style="margin-top: 2rem;">
-                                <div class="seminar-card" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/arch-linux', '_blank')" style="border: 1px solid rgba(146, 161, 176, 0.3); border-radius: 0.5rem; padding: 1rem; margin-bottom: 1rem; transition: all 0.3s ease; cursor: pointer;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="flex: 1;">
-                                            <h4 style="color: #000; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                                <img src="../assets/img/arch-linux.png" alt="Arch Linux Logo" style="width: 24px; height: 24px;"> Arch Linux
+                            <div class="distros-grid project-distros-grid">
+                                <div class="seminar-card project-seminar-card" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/arch-linux', '_blank')">
+                                    <div class="project-card-content">
+                                        <div class="project-flex-1">
+                                            <h4 class="project-card-title">
+                                                <img src="../assets/img/arch-linux.png" alt="Arch Linux Logo" class="project-icon-medium"> Arch Linux
                                             </h4>
-                                            <p style="font-size: 0.9rem; margin: 0; color: var(--second-color);">Rolling-release distribution — customization & AUR package manager.</p>
+                                            <p class="project-p-card">Rolling-release distribution — customization & AUR package manager.</p>
                                         </div>
-                                        <a href="https://archlinux.org/download/" target="_blank" onclick="event.stopPropagation();" style="color: var(--first-color); text-decoration: none; font-weight: 600; font-size: 0.85rem; margin-left: 1rem; white-space: nowrap;">ISO</a>
+                                        <a href="https://archlinux.org/download/" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="project-link-iso">ISO</a>
                                     </div>
                                 </div>
                                 
-                                <div class="seminar-card" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/nixos', '_blank')" style="border: 1px solid rgba(146, 161, 176, 0.3); border-radius: 0.5rem; padding: 1rem; margin-bottom: 1rem; transition: all 0.3s ease; cursor: pointer;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="flex: 1;">
-                                            <h4 style="color: #000; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                                <img src="../assets/img/nixos.png" alt="NixOS Logo" style="width: 24px; height: 24px;"> NixOS
+                                <div class="seminar-card project-seminar-card" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/nixos', '_blank')">
+                                    <div class="project-card-content">
+                                        <div class="project-flex-1">
+                                            <h4 class="project-card-title">
+                                                <img src="../assets/img/nixos.png" alt="NixOS Logo" class="project-icon-medium"> NixOS
                                             </h4>
-                                            <p style="font-size: 0.9rem; margin: 0; color: var(--second-color);">Declarative configuration — reproducible systems with rollbacks.</p>
+                                            <p class="project-p-card">Declarative configuration — reproducible systems with rollbacks.</p>
                                         </div>
-                                        <a href="https://nixos.org/download/" target="_blank" onclick="event.stopPropagation();" style="color: var(--first-color); text-decoration: none; font-weight: 600; font-size: 0.85rem; margin-left: 1rem; white-space: nowrap;">ISO</a>
+                                        <a href="https://nixos.org/download/" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="project-link-iso">ISO</a>
                                     </div>
                                 </div>
                                 
-                                <div class="seminar-card" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/rocky-linux', '_blank')" style="border: 1px solid rgba(146, 161, 176, 0.3); border-radius: 0.5rem; padding: 1rem; transition: all 0.3s ease; cursor: pointer;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="flex: 1;">
-                                            <h4 style="color: #000; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                                                <img src="../assets/img/rocky.png" alt="Rocky Linux Logo" style="width: 24px; height: 24px;"> Rocky Linux
+                                <div class="seminar-card project-seminar-card-last" onclick="window.open('https://github.com/RomeoCavazza/setup-os/tree/main/rocky-linux', '_blank')">
+                                    <div class="project-card-content">
+                                        <div class="project-flex-1">
+                                            <h4 class="project-card-title">
+                                                <img src="../assets/img/rocky.png" alt="Rocky Linux Logo" class="project-icon-medium"> Rocky Linux
                                             </h4>
-                                            <p style="font-size: 0.9rem; margin: 0; color: var(--second-color);">Enterprise-grade stability — RHEL-compatible server distribution.</p>
+                                            <p class="project-p-card">Enterprise-grade stability — RHEL-compatible server distribution.</p>
                                         </div>
-                                        <a href="https://rockylinux.org/download" target="_blank" onclick="event.stopPropagation();" style="color: var(--first-color); text-decoration: none; font-weight: 600; font-size: 0.85rem; margin-left: 1rem; white-space: nowrap;">ISO</a>
+                                        <a href="https://rockylinux.org/download" target="_blank" rel="noopener" onclick="event.stopPropagation();" class="project-link-iso">ISO</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="project-buttons" style="text-align: center; margin-top: 2rem;">
-                            <a href="https://github.com/RomeoCavazza/setup-os/tree/main" target="_blank" class="button project-btn">
+                        <div class="project-buttons">
+                            <a href="https://github.com/RomeoCavazza/setup-os/tree/main" target="_blank" rel="noopener" class="button project-btn">
                                 <i class='bx bxl-github'></i> View on GitHub
                             </a>
                         </div>

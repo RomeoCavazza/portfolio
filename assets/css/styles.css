@@ -543,7 +543,7 @@ img {
 .about section .container {
   width: 100%;
   max-width: 100%;
-  min-height: auto;
+  min-height: 0;
   margin: 0;
   aspect-ratio: 4 / 3;
   border-radius: 1rem;
@@ -1017,6 +1017,71 @@ img {
 .seminar-card:active h4 i,
 .seminar-card:focus h4 i {
   color: var(--first-color) !important;
+}
+
+/* Epitech Training Page Styles */
+.seminars-grid {
+  margin-top: 1.5rem;
+}
+
+.seminar-card {
+  position: relative;
+  display: block;
+  border: 1px solid rgba(146, 161, 176, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.seminar-card h4 {
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seminar-card h4 i {
+  font-size: 1.5rem;
+}
+
+.seminar-card h4 span {
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.seminar-card p {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  color: var(--second-color);
+}
+
+.seminar-card .badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.seminar-card .badge-container img {
+  height: 18px;
+}
+
+.project-buttons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.project-text h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--second-color);
+  font-weight: 600;
+}
+
+.project-text p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .distro-card:hover,

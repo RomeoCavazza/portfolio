@@ -1,27 +1,33 @@
 # Roméo Cavazza
 
-With over 4 years of experience in digital strategy and automation, I now focus on **AI-powered software engineering** — building scalable systems that connect data, intelligence, and design.  
+With over 4 years of experience in digital strategy and automation, I now focus on **AI-powered software engineering** — building scalable systems that connect data, intelligence, and design.
 
-Currently, I'm pursuing a [Master of Science](https://www.epitech.eu/formation-alternance/pre-msc-post-bac2/) at [Epitech Paris](https://www.epitech.eu/ecole-informatique-paris/), while developing my own products and research projects.  
+Currently, I'm pursuing a [Master of Science](https://www.epitech.eu/formation-alternance/pre-msc-post-bac2/) at [Epitech Paris](https://www.epitech.eu/ecole-informatique-paris/), while developing my own products and research projects.
 
-I'm building a **SaaS platform for TikTok & Instagram OSINT** — designed to scrape, index, and analyze social media data using **FastAPI**, **PostgreSQL**, and **Supabase**.  
-You'll also find here some of my other projects: **Revolvr Bot**, **TCO-OS (Linux/NixOS)**, **Piscine Epitech projects**, and experimental **low-code automation pipelines**.  
+I'm building a **SaaS platform for TikTok & Instagram OSINT** — designed to scrape, index, and analyze social media data using **FastAPI**, **PostgreSQL**, and **Supabase**.
+
+You'll also find here some of my other projects: **ShellGeist** (cyberpunk TUI AI agent), **Revolvr Bot**, **TCO-OS (Linux/NixOS)**, **Piscine Epitech projects**, and experimental **low-code automation pipelines**.
 
 ## 🚀 Currently focusing on
-🧠 **AI & Backend Engineering** — FastAPI, LangChain, Supabase, data pipelines  
-⚙️ **DevOps & OS** — Docker, NixOS, CI/CD, reproducible environments  
-📡 **OSINT & SaaS Automation** — scalable data ingestion, APIs, and analytics  
-🔬 **Formal R&D** — logic, computation, and geometry through Coq/Agda  
+
+🧠 **AI & Backend Engineering** — FastAPI, LangChain, Supabase, data pipelines
+
+⚙️ **DevOps & OS** — Docker, NixOS, CI/CD, reproducible environments
+
+📡 **OSINT & SaaS Automation** — scalable data ingestion, APIs, and analytics
+
+🔬 **Formal R&D** — logic, computation, and geometry through Coq/Agda
 
 ---
 
-## 🌐 Connect with Me 
+## 🌐 Connect with Me
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://www.romeo-cavazza.dev) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/romeo-cavazza/) [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/TKbNuuV4sX)
 
 ---
 
 ## 🛠 Tech Stack
+
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
@@ -47,7 +53,7 @@ You'll also find here some of my other projects: **Revolvr Bot**, **TCO-OS (Linu
 
 **Cloud & DevOps** : Linux · Docker · Git/GitHub · Vercel · Railway · Makefile · systemd · Nix flakes
 
-**Data, IA & Machine Learning** : Pandas · NumPy · Scikit-Learn · LangChain · Hugging Face · REST APIs · Redis · PostgreSQL · SQLite · MongoDB 
+**Data, IA & Machine Learning** : Pandas · NumPy · Scikit-Learn · LangChain · Hugging Face · REST APIs · Redis · PostgreSQL · SQLite · MongoDB
 
 **Outils & R&D** : Bash · arXiv · Hyprland (rice Linux) · Coq / Agda
 
@@ -55,18 +61,22 @@ You'll also find here some of my other projects: **Revolvr Bot**, **TCO-OS (Linu
 
 ## 🗂️ Highlighted Projects
 
+- [**shellgeist**](https://github.com/RomeoCavazza/shellgeist) 👻 – The Ghost in Your Shell. A transparent, cyberpunk Terminal User Interface (TUI) agent powered by LLMs. Helps you code, navigate, and automate tasks without leaving your keyboard. Built with Python, Textual, and supports Ollama/OpenAI.
 - [**piscine-epitech**](https://github.com/RomeoCavazza/piscine-epitech) A learning repository that reflects my step-by-step progressduring the EPITECH Piscine (Pre-MSc 2025), covering Python, Linux, algorithms, and data structures.
 - [**no-low-code**](https://github.com/RomeoCavazza/no-low-code) Simple automation workflows built with Make, n8n, and Airtable, designed to aggregate data (RSS, social media) and explore OSINT.
 - [**revolver-ai-bot**](https://github.com/RomeoCavazza/revolver-ai-bot) – Prototype Slack chatbot for automating internal briefs and strategic monitoring.
 - [**setup-os**](https://github.com/RomeoCavazza/setup-os) – Personal Linux configurations (Arch, NixOS, Rocky) including dotfiles and Hyprland ricing. A reproducible setup baseline, continuously refined.
 
 ---
+
 ## ⏱️ Wakatime
 
 ![wakatime](https://wakatime.com/badge/user/5e4b28a1-b544-4033-9d4b-0f3cf1a431c8.svg)
 
-<img src="https://wakatime.com/share/@romeocavazza/44dc4854-22cf-48b6-a16e-089d1749ae8f.svg" alt="WakaTime Stats" />
+![WakaTime Stats](https://wakatime.com/share/@romeocavazza/44dc4854-22cf-48b6-a16e-089d1749ae8f.svg)
 
 ## 🖥️ GitHub Stats
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=RomeoCavazza&show_icons=true&theme=radical)  
+
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=RomeoCavazza&show_icons=true&theme=radical)
+
 ![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=RomeoCavazza&layout=compact&theme=radical)

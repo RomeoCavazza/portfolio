@@ -1,0 +1,452 @@
+/* Styles pour les pages de projet - Extraction des styles inline */
+
+/* Layout flex commun */
+.project-flex-row {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.project-flex-row-large {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 6rem 0;
+}
+
+.project-flex-row-xlarge {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 8rem 0;
+}
+
+.project-flex-row-medium {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.project-flex-row-reverse {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 8rem 0;
+    flex-direction: row-reverse;
+}
+
+.project-flex-row-reverse-medium {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+    flex-direction: row-reverse;
+}
+
+.project-flex-1 {
+    flex: 1;
+}
+
+.project-flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.project-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.project-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-flex-gap {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Typographie */
+.project-h4 {
+    color: #000;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-h3 {
+    color: #000;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-h3-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--second-color);
+    font-weight: 600;
+}
+
+.project-p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--second-color);
+}
+
+.project-p-small {
+    font-size: 0.85rem;
+    color: var(--second-color);
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-p-description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-p-card {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--second-color);
+}
+
+/* Icônes */
+.project-icon {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.project-icon-small {
+    font-size: 0.75rem;
+}
+
+.project-icon-medium {
+    width: 24px;
+    height: 24px;
+}
+
+/* Liens */
+.project-link {
+    color: var(--first-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.project-link-supabase {
+    color: #3ECF8E;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.project-link-external {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.project-link-iso {
+    color: var(--first-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+.project-link-inline {
+    color: var(--first-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-link-block {
+    display: inline-block;
+}
+
+.project-link-cursor {
+    cursor: pointer;
+}
+
+/* Images */
+.project-logo {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.project-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Image stack */
+.project-image-stack {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.project-stack-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* GitHub Card */
+.project-github-card-container {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.project-github-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.project-card-hover {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.project-card-hover:hover {
+    transform: scale(1.02);
+}
+
+/* Discord Button */
+.project-discord-container {
+    flex-shrink: 0;
+    width: 400px;
+}
+
+.project-discord-button-block {
+    display: block;
+}
+
+.project-discord-content {
+    flex: 1;
+    text-align: left;
+}
+
+.project-discord-title {
+    color: #818cf8;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+.project-discord-subtitle {
+    color: rgba(129, 140, 248, 0.6);
+    font-size: 14px;
+    margin: 0;
+}
+
+.project-discord-arrow {
+    width: 20px;
+    height: 20px;
+    color: #818cf8;
+}
+
+/* Badges */
+.project-badges {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-badges-center {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Cards */
+.project-seminar-card {
+    border: 1px solid rgba(146, 161, 176, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-seminar-card-last {
+    border: 1px solid rgba(146, 161, 176, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-card-title {
+    color: #000;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Buttons */
+.project-buttons {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.project-button-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Browser containers */
+.project-browser-container {
+    position: relative;
+    width: 650px;
+    height: 450px;
+}
+
+.project-browser-container-large {
+    position: relative;
+    width: 650px;
+    height: 450px;
+}
+
+.project-browser-container-xlarge {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    margin-bottom: 8rem;
+}
+
+.project-browser-container-6rem {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-bottom: 8rem;
+}
+
+.project-browser-container-6rem-reverse {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-bottom: 8rem;
+    flex-direction: row-reverse;
+}
+
+/* Text containers */
+.project-text-container {
+    flex: 1;
+}
+
+.project-text-margin {
+    margin-bottom: 2rem;
+}
+
+.project-text-margin-top {
+    margin-top: 3rem;
+}
+
+.project-text-center {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Distros grid */
+.project-distros-grid {
+    margin-top: 2rem;
+}
+
+/* ShellGeist specific styles */
+.project-logo-center {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-logo-img {
+    max-width: 240px;
+    height: auto;
+}
+
+.project-h4-features {
+    color: var(--first-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-features-container {
+    margin-bottom: 1.5rem;
+}
+
+.project-h5 {
+    color: var(--second-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-p-feature {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-commands-container {
+    background: rgba(146, 161, 176, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.project-table td {
+    padding: 0.5rem;
+}
+
+.project-table-command {
+    font-weight: 600;
+    color: var(--first-color);
+}
+
+.project-table-desc {
+    font-size: 0.9rem;
+}
+
+/* Responsive - les styles inline seront gérés par les media queries existantes dans styles.css */
+

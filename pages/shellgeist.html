@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ShellGeist - Terminal User Interface agent powered by LLMs. Cyberpunk TUI for coding, navigation, and automation with AI.">
+        <meta name="keywords" content="ShellGeist, TUI, Terminal UI, LLM, AI agent, Ollama, OpenAI, Python, Textual, NixOS, terminal automation, cyberpunk interface">
+        <meta name="author" content="Roméo Cavazza">
+        <meta name="robots" content="index, follow">
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
+        <link rel="canonical" href="https://romeo-cavazza.dev/pages/shellgeist.html">
+        <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/project-pages.css">
+        <link rel="preconnect" href="https://unpkg.com">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+        <title>ShellGeist | Roméo Cavazza - Portfolio</title>
+    </head>
+    <body>
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="../index.html" class="nav__logo">Romeo</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="../index.html#home" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="../index.html#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="../index.html#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item dropdown">
+                            <a href="#" class="nav__link active">Work <i class='bx bx-chevron-down'></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="epitech-training.html">Epitech Training</a></li>
+                                <li><a href="workflow-automation.html">Workflow Automation</a></li>
+                                <li><a href="social-platform.html">Social Platform</a></li>
+                                <li><a href="system-setup.html">System Setup</a></li>
+                                <li><a href="shellgeist.html">ShellGeist</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item"><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <section class="about section project-section" id="project">
+                <div class="bd-grid">
+                    <h2 class="section-title">ShellGeist 👻</h2>
+                    
+                    <div class="project-container">
+                        <div class="project-logo-center">
+                            <img src="../assets/img/shellgeist-logo.png" alt="ShellGeist Logo" class="project-logo-img">
+                        </div>
+                        
+                        <img class="project-img" src="../assets/img/shellgeist-screenshot.png" alt="ShellGeist TUI - Cyberpunk terminal interface with AI agent" width="800" height="600">
+                        
+                        <div class="about__text project-text">
+                            <h3>The Ghost in Your Shell</h3>
+                            <p>ShellGeist is a transparent, cyberpunk Terminal User Interface (TUI) agent powered by LLMs. It haunts your terminal to help you code, navigate, and automate tasks without ever leaving your keyboard.</p>
+                            
+                            <div class="badges-container project-badges">
+                                <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                                <img src="https://img.shields.io/badge/Built%20With-Textual-FD6E98?style=for-the-badge" alt="Textual">
+                                <img src="https://img.shields.io/badge/NixOS-Ready-5277C3?style=for-the-badge&logo=nixos&logoColor=white" alt="NixOS">
+                                <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white" alt="AI">
+                                <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+                            </div>
+
+                            <h4 class="project-h4-features">✨ Features</h4>
+                            
+                            <div class="project-features-container">
+                                <h5 class="project-h5">👾 Cyberpunk Dashboard</h5>
+                                <p class="project-p-feature">A grid-based layout inspired by modern IDEs and sci-fi interfaces. 100% transparent — seamlessly blends with your terminal wallpaper or blur.</p>
+                                
+                                <h5 class="project-h5">🧠 Dual Mode Brain</h5>
+                                <p class="project-p-feature">
+                                    <strong>FAST Mode</strong>: Uses lightweight models (e.g., Mistral) for instant answers.<br>
+                                    <strong>SMART Mode</strong>: Switches to heavy-hitters (e.g., Llama3, GPT-4) for complex reasoning and planning.
+                                </p>
+                                
+                                <h5 class="project-h5">🤖 Autonomous Agent</h5>
+                                <p class="project-p-feature">
+                                    <code>/auto</code> Planner: Breaks down high-level goals into executable steps.<br>
+                                    <code>/edit</code> Coder: Smart file editing with diff previews and safety checks.<br>
+                                    <code>/sh</code> Executor: Generates and runs shell commands safely.
+                                </p>
+                                
+                                <h5 class="project-h5">📊 Real-time Monitoring</h5>
+                                <p class="project-p-feature">Live CPU/RAM usage tracking. Reactive agent status indicators (IDLE, THINKING, PLANNING, CODING).</p>
+                            </div>
+
+                            <h4 class="project-h4-features">🎮 Commands</h4>
+                            
+                            <div class="project-commands-container">
+                                <table class="project-table">
+                                    <tr>
+                                        <td class="project-table-command">Chat</td>
+                                        <td><code>// &lt;msg&gt;</code></td>
+                                        <td class="project-table-desc">Just type to chat with the AI</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-table-command">Auto</td>
+                                        <td><code>/auto &lt;goal&gt;</code></td>
+                                        <td class="project-table-desc">Autonomous Mode: Plans and executes complex tasks</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-table-command">Edit</td>
+                                        <td><code>/edit &lt;file&gt; &lt;instr&gt;</code></td>
+                                        <td class="project-table-desc">Edit a specific file with instructions</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-table-command">Shell</td>
+                                        <td><code>/sh &lt;task&gt;</code></td>
+                                        <td class="project-table-desc">Generate and run shell commands</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-table-command">List</td>
+                                        <td><code>/ls</code></td>
+                                        <td class="project-table-desc">List files in the current directory with icons</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="project-buttons">
+                                <a href="https://github.com/RomeoCavazza/shellgeist" target="_blank" rel="noopener" class="button project-btn">
+                                    <i class='bx bxl-github'></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="work section">
+                <h2 class="section-title">Other Projects</h2>
+              
+                <div class="work__container work__container--mini">
+                    <a href="epitech-training.html" class="work__item">
+                        <div class="work__img">
+                            <img src="../assets/img/piscine.png" alt="Epitech Training - Python, Linux and algorithm projects">
+                        </div>
+                        <div class="work__title">
+                            <h3>Epitech Training</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="workflow-automation.html" class="work__item">
+                        <div class="work__img">
+                            <img src="../assets/img/automation.png" alt="Workflow Automation - Data pipeline automation">
+                        </div>
+                        <div class="work__title">
+                            <h3>Workflow Automation</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="social-platform.html" class="work__item">
+                        <div class="work__img">
+                            <img src="../assets/img/veylio.png" alt="Social Platform - Social intelligence platform for OSINT">
+                        </div>
+                        <div class="work__title">
+                            <h3>Social Platform</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="system-setup.html" class="work__item">
+                        <div class="work__img">
+                            <img src="../assets/img/hyprland.jpg" alt="System Setup - Hyprland and NixOS Linux configuration">
+                        </div>
+                        <div class="work__title">
+                            <h3>System Setup</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>              
+        </main>
+
+        <footer class="footer">
+            <p class="footer__title">Romeo</p>
+            
+            <div class="footer__contact">
+                <a href="mailto:romeo.cavazza@gmail.com" class="footer__contact-link">
+                    <i class='bx bx-envelope'></i>romeo.cavazza@gmail.com
+                </a>
+                <a href="tel:+33699256758" class="footer__contact-link">
+                    <i class='bx bx-phone'></i>+33 6 99 25 67 58
+                </a>
+            </div>
+            
+            <p class="footer__copy">© 2025 Romeo Cavazza — Resume</p>
+        </footer>
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../assets/js/main.js"></script>
+    </body>
+</html>
+
