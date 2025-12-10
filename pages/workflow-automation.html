@@ -194,7 +194,7 @@
                 display: block;
             }
             
-            /* Cascade des navigateurs complets */
+            /* Empilement des navigateurs - une au-dessus de l'autre par défaut */
             .browser-front {
                 position: absolute;
                 top: 0;
@@ -205,48 +205,45 @@
             
             .browser-back {
                 position: absolute;
-                top: 35px;
-                left: 35px;
+                top: 0;
+                left: 0;
                 z-index: 1;
                 transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
             }
             
-            /* Les navigateurs sans .now-front sont derrière en cascade */
-            .browser-front:not(.now-front) {
-                opacity: 0.4;
+            /* Par défaut : browser-front visible, browser-back caché */
+            .browser-front:not(.now-back) {
+                opacity: 1;
+                filter: brightness(1) blur(0);
+                z-index: 2;
+                pointer-events: auto;
+            }
+            
+            .browser-front.now-back {
+                opacity: 0;
                 filter: brightness(0.5) blur(1px);
                 z-index: 1;
                 pointer-events: none;
             }
             
-            .browser-front.now-front {
-                opacity: 1;
-                filter: brightness(1) blur(0);
-                z-index: 3;
-                pointer-events: auto;
-            }
-            
-            .browser-back:not(.now-front) {
-                opacity: 0.4;
+            .browser-back:not(.now-back) {
+                opacity: 0;
                 filter: brightness(0.5) blur(1px);
                 z-index: 1;
                 pointer-events: none;
             }
             
-            .browser-back.now-front {
+            .browser-back.now-back {
                 opacity: 1;
                 filter: brightness(1) blur(0);
-                z-index: 3;
+                z-index: 2;
                 pointer-events: auto;
             }
             
-            /* Effet de cascade au hover du conteneur */
-            div[style*="position: relative"]:hover .browser.now-front {
-                transform: translate(-5px, -5px);
-            }
-            
-            div[style*="position: relative"]:hover .browser:not(.now-front) {
-                opacity: 0.5;
+            /* Effet au hover du conteneur */
+            .project-browser-container:hover .browser-front:not(.now-back),
+            .project-browser-container:hover .browser-back.now-back {
+                transform: translateY(-5px);
             }
             
             /* Ajustements de taille pour chaque image */
@@ -777,31 +774,30 @@
                 const browserFront = container.querySelector('.browser-front');
                 const browserBack = container.querySelector('.browser-back');
                 
-                // Toggle pour inverser qui est devant
+                // Toggle pour inverser qui est visible (empilé par défaut, échange au clic)
                 if (browserFront && browserBack) {
-                    const frontIsActive = browserFront.classList.contains('now-front');
+                    const backIsActive = browserBack.classList.contains('now-back');
                     
-                    if (frontIsActive) {
-                        browserFront.classList.remove('now-front');
-                        browserBack.classList.add('now-front');
+                    if (backIsActive) {
+                        // Retour à l'état initial : front visible, back caché
+                        browserBack.classList.remove('now-back');
+                        browserFront.classList.remove('now-back');
                     } else {
-                        browserFront.classList.add('now-front');
-                        browserBack.classList.remove('now-front');
+                        // Échange : back visible, front caché
+                        browserBack.classList.add('now-back');
+                        browserFront.classList.add('now-back');
                     }
                 }
             }
             
             // Initialiser tous les conteneurs comme cliquables
             document.addEventListener('DOMContentLoaded', function() {
-                const containers = document.querySelectorAll('div[style*="position: relative"]');
+                const containers = document.querySelectorAll('.project-browser-container');
                 containers.forEach(container => {
                     if (container.querySelector('.browser')) {
                         container.style.cursor = 'pointer';
-                        // Initialiser le premier navigateur (front) comme visible
-                        const browserFront = container.querySelector('.browser-front');
-                        if (browserFront) {
-                            browserFront.classList.add('now-front');
-                        }
+                        // Par défaut : browser-front visible (pas de classe now-back)
+                        // browser-back est caché par défaut
                     }
                 });
             });
