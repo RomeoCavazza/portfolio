@@ -1719,3 +1719,11 @@ img {
 .project-table-desc {
     font-size: 0.9rem;
 }
+
+/* Responsive pour la grille 2x2 des features */
+@media screen and (max-width: 768px) {
+    div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
