@@ -396,11 +396,16 @@
 .project-logo-center {
     text-align: center;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-logo-img {
     max-width: 240px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .project-h4-features {
