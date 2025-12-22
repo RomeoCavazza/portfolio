@@ -1793,3 +1793,12 @@ img {
         gap: 1.5rem;
     }
 }
+
+.seminar-logo-icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    filter: brightness(0) saturate(100%) invert(40%) sepia(100%) saturate(2000%) hue-rotate(200deg) brightness(1);
+}
